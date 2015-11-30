@@ -174,6 +174,10 @@ module.exports = function(grunt){
       return run('git add ' + files, ' staged ' + files);
     }
 
+    function addAll(){
+      return run('git add --all', ' staged all files'); 
+    }
+
     function commit(){
       if (typeof commitMessage === 'string') {
         commitMessage = [commitMessage];
@@ -319,6 +323,7 @@ module.exports = function(grunt){
       .then(ifEnabled('beforeRelease', runTasks('beforeRelease')))
       .then(ifEnabled('changelog', changelog))
       .then(ifEnabled('add', add))
+      .then(ifEnabled('addAll', addAll))
       .then(ifEnabled('commit', commit))
       .then(ifEnabled('tag', tag))
       .then(ifEnabled('push', push))
