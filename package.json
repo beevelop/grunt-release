@@ -25,7 +25,7 @@
   "dependencies": {
     "shelljs": "^0.5.1",
     "semver": "^4.3.6",
-    "superagent": "^1.2.0",
+    "superagent": "^1.8.4",
     "q": "^1.4.1"
   },
   "devDependencies": {
